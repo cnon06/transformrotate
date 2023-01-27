@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -13,34 +13,34 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: const Text('Material App Bar'),
         ),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             myTransformTranslate(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             myTransformRotateOffset(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             myTransformScaleY(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             myTransformScaleX(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             myTransformScale(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             myTransformRotate(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             mySlider(),
@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
 
   Transform myTransformTranslate() {
     return Transform.translate(
-            offset: Offset(this.value * 50, -this.value * 50),
+            offset: Offset(value * 50, -value * 50),
             child: Container(
               width: 50,
               height: 50,
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
 
   Transform myTransformScaleY() {
     return Transform.scale(
-      scaleY: 1 - this.value,
+      scaleY: 1 - value,
       child: Container(
         width: 50,
         height: 50,
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
 
   Transform myTransformScaleX() {
     return Transform.scale(
-      scaleX: this.value,
+      scaleX: value,
       child: Container(
         width: 50,
         height: 50,
@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
 
   Transform myTransformScale() {
     return Transform.scale(
-      scale: 1 - this.value,
+      scale: 1 - value,
       child: Container(
         width: 50,
         height: 50,
@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
   }
 
   Transform myTransformRotateOffset() => Transform.rotate(
-        origin: Offset(this.value * 40, this.value * 40),
+        origin: Offset(value * 40, value * 40),
         angle: value * 10,
         child: Container(
           height: 50,
@@ -113,7 +113,7 @@ class _HomeState extends State<Home> {
 
   Slider mySlider() {
     return Slider(
-        value: this.value,
+        value: value,
         onChanged: (value) {
           setState(() {
             this.value = value;
